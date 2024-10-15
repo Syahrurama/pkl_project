@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Mode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Animasi masuk lembut */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            background: #dfe9f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            background: #fff;
+            width: 90px;
+            overflow: hidden;
+            transition: width 0.4s ease;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        nav:hover {
+            width: 250px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        nav ul li a {
+            display: flex;
+            align-items: center;
+            color: rgb(85, 83, 83);
+            font-size: 14px;
+            padding: 15px 20px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: bold;
+        }
+
+        nav ul li a img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul li a i {
+            font-size: 24px;
+            margin-right: 15px;
+            text-align: center;
+            width: 40px;
+        }
+
+        nav ul li a span.nav-item {
+            display: none;
+            margin-left: 10px;
+        }
+
+        nav:hover ul li a span.nav-item {
+            display: inline;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        nav ul li a:hover {
+            background: #dbdbdb;
+            border-radius: 5px;
+            transform: scale(1.02);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            transition: all 0.4s ease;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .logo span {
+            font-weight: bold;
+            padding-left: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+            display: none;
+            opacity: 0;
+        }
+
+        nav:hover .logo span {
+            display: inline;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        nav:hover .logo img {
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mode-settings {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .input-box {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 50%;
+            margin-left: 10px;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+        .dark-mode .container {
+            background: #444;
+            color: #f4f4f4;
+        }
+
+        .dark-mode .input-box {
+            background-color: #555;
+            border: 1px solid #777;
+            color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="Asset/bunga.png" alt="">
+                    <span class="nav-item" id="nav-logo">Politeknik Karya Husada</span>
+                </a>
+            </li>
+            <li><a href="Identitas.html"><i class="fas fa-file-alt"></i><span class="nav-item" id="nav-sheet">Lembar Identitas</span></a></li>
+            <li><a href="Signifikan.html"><i class="fas fa-file-alt"></i><span class="nav-item" id="nav-significant">Lembar Signifikan</span></a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i><span class="nav-item" id="nav-settings">Pengaturan</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 id="title">Pengaturan Mode</h1>
+        <div class="mode-settings">
+            <label for="mode" id="mode-label">Pilih Mode:</label>
+            <select id="mode" class="input-box">
+                <option value="light">Terang</option>
+                <option value="dark">Gelap</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div class="mode-settings">
+            <label for="language" id="language-label">Pilih Bahasa:</label>
+            <select id="language" class="input-box">
+                <option value="id">Bahasa Indonesia</option>
+                <option value="en">English (USA)</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        // Menangani perubahan mode
+        document.getElementById('mode').addEventListener('change', function() {
+            if (this.value === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        });
+
+        // Menangani perubahan bahasa
+        document.getElementById('language').addEventListener('change', function() {
+            const language = this.value;
+            const title = document.getElementById('title');
+            const modeLabel = document.getElementById('mode-label');
+            const languageLabel = document.getElementById('language-label');
+
+            if (language === 'en') {
+                title.textContent = "Mode Settings";
+                modeLabel.textContent = "Select Mode:";
+                languageLabel.textContent = "Select Language:";
+
+                document.getElementById('nav-logo').textContent = 'Politeknik Karya Husada';
+                document.getElementById('nav-sheet').textContent = 'Identity Sheet';
+                document.getElementById('nav-significant').textContent = 'Significant Sheet';
+                document.getElementById('nav-settings').textContent = 'Settings';
+            } else {
+                title.textContent = "Pengaturan Mode";
+                modeLabel.textContent = "Pilih Mode:";
+                languageLabel.textContent = "Pilih Bahasa:";
+
+                document.getElementById('nav-logo').textContent = 'Politeknik Karya Husada';
+                document.getElementById('nav-sheet').textContent = 'Lembar Identitas';
+                document.getElementById('nav-significant').textContent = 'Lembar Signifikan';
+                document.getElementById('nav-settings').textContent = 'Pengaturan';
+            }
+        });
+    </script>
+
+</body>
+</html>

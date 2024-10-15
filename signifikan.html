@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Signifikan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="signifikan.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav>
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="Asset/bunga.png" alt="">
+                    <span class="nav-item">Politeknik Karya Husada</span>
+                </a>
+            </li>
+            <li><a href="Identitas.html"><i class="fas fa-file-alt"></i><span class="nav-item">Lembar Identitas</span></a></li>
+            <li><a href="#"><i class="fas fa-file-alt"></i><span class="nav-item">Lembar Signifikan</span></a></li>
+            <li><a href="pengaturan.html"><i class="fa-solid fa-gear"></i><span class="nav-item">Pengaturan</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Judul -->
+    <div class="container-fluid" id="content">
+        <h1>Lembar Signifikan</h1>
+        <br>
+        
+        <!-- Konten lainnya seperti tabel atau form -->
+        <div class="card">
+            <div class="card-body">
+                <h2>Data Signifikan Pasien</h2>
+                <br>
+
+                <!-- Pindahkan tombol di sini -->
+                <div class="button-container">
+                    <button id="tambahButton" class="btn btn-primary">Tambah</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>ID</th>
+                                <th>Diagnosa</th>
+                                <th>Dasar <br> Diagnosa</th>
+                                <th>Tindakan <br> Kedokteran</th>
+                                <th>Identifikasi <br> Tindakan</th>
+                                <th> Tatacara</th>
+                                <th> Tujuan</th>
+                                <th>Resiko <br> Komplikasi </th>
+                                <th>Prognosis</th>
+                                <th>Alternatif <br> Resiko</th>
+                                <th>Tindakan <br> Lain</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>DinoSaurus</td>
+                                <td>hiya</td>
+                                <td>hiya</td>
+                                <td>hiya</td>
+                                <td>hiya</td>
+                                <td>hiya</td>
+                                <td>hiya</td>
+                                <td>hiya</td>
+                                <td>hiya</td>
+                                <td>hiya</td>
+                                <td>hiya</td>
+                                <td>
+                                    <a href="#" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa-regular fa-note-sticky"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <h1>Tambah Data</h1>
+        <br>
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-body">
+            <label for="id">ID:</label>
+            <div class="input-container">
+                <input type="text" id="id" class="input-box" placeholder="Masukkan ID">
+            </div>
+
+            <label for="diagnosa">Diagnosa:</label>
+            <div class="input-container">
+                <input type="text" id="diagnosa" class="input-box" placeholder="Masukkan Diagnosa">
+            </div>
+
+            <label for="dasarDiagnosa">Dasar Diagnosa:</label>
+            <div class="input-container">
+                <input type="text" id="dasarDiagnosa" class="input-box" placeholder="Masukkan Dasar Diagnosa">
+            </div>
+
+            <label for="tindakanKedokteran">Tindakan Kedokteran:</label>
+            <div class="input-container">
+                <input type="text" id="tindakanKedokteran" class="input-box" placeholder="Masukkan Tindakan Kedokteran">
+            </div>
+
+            <label for="identifikasiTindakan">Identifikasi Tindakan:</label>
+            <div class="input-container">
+                <input type="text" id="identifikasiTindakan" class="input-box" placeholder="Masukkan Identifikasi Tindakan">
+            </div>
+
+            <label for="tatacara">Tatacara:</label>
+            <div class="input-container">
+                <input type="text" id="tatacara" class="input-box" placeholder="Masukkan Tatacara">
+            </div>
+
+            <label for="tujuan">Tujuan:</label>
+            <div class="input-container">
+                <input type="text" id="tujuan" class="input-box" placeholder="Masukkan Tujuan">
+            </div>
+            
+            <label for="resikoKomplikasi">Resiko Komplikasi:</label>
+            <div class="input-container">
+                <input type="text" id="resikoKomplikasi" class="input-box" placeholder="Masukkan Resiko Komplikasi">
+            </div>
+
+            <label for="prognosis">Prognosis:</label>
+            <div class="input-container">
+                <input type="text" id="prognosis" class="input-box" placeholder="Masukkan Prognosis">
+            </div>
+
+            <label for="alternatifResiko">Alternatif Resiko:</label>
+            <div class="input-container">
+                <input type="text" id="alternatifResiko" class="input-box" placeholder="Masukkan Alternatif Resiko">
+            </div>
+
+            <label for="tindakanLain">Tindakan Lain:</label>
+            <div class="input-container">
+                <input type="text" id="tindakanLain" class="input-box" placeholder="Masukkan Tindakan Lain">
+            </div>
+            <br>
+
+            <!-- Pesan Peringatan -->
+            <p id="warningMessage" style="display:none; color: red;">Pastikan semua data terisi!</p>
+            <br>
+            <button class="btn btn-primary" id="saveButton">Simpan</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        // Mendapatkan modal
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("tambahButton");
+        var span = document.getElementsByClassName("close")[0];
+        var warningMessage = document.getElementById("warningMessage");
+
+        // Ketika tombol ditekan, buka modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Ketika pengguna mengklik (x), tutup modal
+        span.onclick = function() {
+            closeModal();
+        }
+
+        // Ketika pengguna mengklik di luar modal, tutup modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Tambahkan event listener untuk tombol simpan
+        document.getElementById("saveButton").onclick = function() {
+            // Ambil nilai dari setiap input
+            var id = document.getElementById("id").value;
+            var diagnosa = document.getElementById("diagnosa").value;
+            var dasarDiagnosa = document.getElementById("dasarDiagnosa").value;
+            var tindakanKedokteran = document.getElementById("tindakanKedokteran").value;
+            var identifikasiTindakan = document.getElementById("identifikasiTindakan").value;
+            var tatacara = document.getElementById("tatacara").value;
+            var tujuan = document.getElementById("tujuan").value;
+            var resikoKomplikasi = document.getElementById("resikoKomplikasi").value;
+            var prognosis = document.getElementById("prognosis").value;
+            var alternatifResiko = document.getElementById("alternatifResiko").value;
+            var tindakanLain = document.getElementById("tindakanLain").value;
+
+            // Cek jika semua input sudah terisi
+            if (id && diagnosa && dasarDiagnosa && tindakanKedokteran && identifikasiTindakan && tatacara && tujuan && resikoKomplikasi && prognosis && alternatifResiko && tindakanLain) {
+                // Data lengkap, lakukan proses penyimpanan (misalnya, AJAX atau form submit)
+                alert("Data berhasil disimpan!");
+                closeModal();
+            } else {
+                // Jika ada data yang kosong, tampilkan pesan peringatan
+                warningMessage.style.display = "block";
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #dfe9f5;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    background: #fff;
+    width: 90px;
+    overflow: hidden;
+    transition: width 0.4s ease;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+nav:hover {
+    width: 250px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    padding: 15px 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+nav ul li a img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a i {
+    font-size: 24px;
+    margin-right: 15px;
+    text-align: center;
+    width: 40px;
+}
+
+nav ul li a span.nav-item {
+    display: none;
+    margin-left: 10px;
+}
+
+nav:hover ul li a span.nav-item {
+    display: inline;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+nav ul li a:hover {
+    background: #dbdbdb;
+    border-radius: 5px;
+    transform: scale(1.02);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    transition: all 0.4s ease;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.logo span {
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    display: none;
+    opacity: 0;
+}
+
+nav:hover .logo span {
+    display: inline;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+nav:hover .logo img {
+    transform: scale(1.1);
+}
+
+/* Media Query untuk Responsivitas */
+@media (max-width: 768px) {
+    nav {
+        width: 70px;
+    }
+
+    nav:hover {
+        width: 200px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    nav ul li a img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        width: 60px;
+    }
+
+    nav:hover {
+        width: 180px;
+    }
+
+    nav ul li a {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    nav ul li a img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo span {
+        font-size: 14px;
+    }
+}
+
+.container-fluid {
+    padding: 20px;
+    margin-left: 100px; /* Menyesuaikan margin kiri untuk konten agar tidak tertutup sidebar */
+    color: rgb(137, 137, 137);
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(214, 37, 37, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    text-align: center;
+    color: #007bff;
+}
+
+.button-container {
+    margin-right: auto;
+    display: flex;
+}
+
+/* Awalnya modal disembunyikan */
+.input-container {
+    margin-bottom: 10px; /* Jarak antara input */
+}
+
+.input-box {
+    width: 100%; /* Lebar penuh */
+    padding: 10px; /* Jarak di dalam kotak */
+    border: 1px solid #ccc; /* Warna border */
+    border-radius: 5px; /* Sudut melengkung */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    font-size: 16px; /* Ukuran font */
+}
+
+.input-box:focus {
+    border-color: #007bff; /* Warna border saat fokus */
+    outline: none; /* Menghilangkan outline default */
+}
+
+   /* Tambahkan beberapa gaya CSS untuk modal */
+   .modal {
+    display: none; /* Modal disembunyikan secara default */
+    position: fixed; /* Tetap pada posisi fixed */
+    z-index: 1; /* Atur di atas elemen lainnya */
+    left: 0;
+    top: 0;
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    overflow: auto; /* Jika perlu, tambahkan scroll */
+    background-color: rgb(0,0,0); /* Latar belakang hitam */
+    background-color: rgba(0,0,0,0.4); /* Latar belakang hitam dengan transparansi */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Atur margin untuk mendapatkan posisi tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Lebar modal */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto; /* Mengurangi jarak atas/bawah */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px; /* Membuat sudut lebih halus */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Bayangan lebih lembut */
+    max-width: 600px; /* Maksimum lebar konten modal */
+    width: 90%; /* Lebar konten modal responsif */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Menambahkan transisi */
+    transform: translateY(-30px); /* Menggeser modal ke atas */
+}
+
+.modal-body {
+    text-align: left;
+    left: 100px;
+    color: #000;
+}
+
+.close {
+    position: absolute; /* Mengatur posisi absolut */
+    top: 10px; /* Jarak dari atas modal */
+    right: 15px; /* Jarak dari kanan modal */
+    font-size: 40px; /* Ukuran font yang lebih besar */
+    cursor: pointer; /* Menambahkan kursor pointer */
+    padding: 10px; /* Menambah padding untuk memperbesar area klik */
+    transition: transform 0.2s ease; /* Transisi saat hover */
+}
+
+.close:hover {
+    transform: scale(1.1); /* Meningkatkan ukuran sedikit saat hover */
+    color: red;
+}
+
+.modal-content h1{
+    color: #007bff;
+}
+.btn-primary {
+    background: white;
+    color: #007bff;
+    padding: 10px 20px;
+    border: 3px solid #007bff; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    background-color: #0056b3; 
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.4); 
+    transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%; /* Memperlebar lebar untuk tampilan mobile */
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-primary {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 12px;
+    }
+}
+
+/* Tabel responsif */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table {
+    margin-top: 20px;
+    width: 100%;
+    table-layout: auto;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+    border-radius: 3px;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-info,
+.btn-danger {
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-info:hover,
+.btn-danger:hover,
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Tambahan untuk kolom agar stack di mobile */
+@media (max-width: 768px) {
+    th, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f8f9fa;
+        color: #007bff;
+    }
+}
+
+/* Hover untuk ikon di tombol aksi */
+.btn-info:hover i,
+.btn-danger:hover i,
+.btn-primary:hover i {
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+/* CSS untuk tampilan sukses dan gagal */
+.sukses {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.gagal {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column; /* Atur elemen dalam kolom */
+}
+
+.input-field {
+    width: 100%; /* Lebar penuh */
+    padding: 10px; /* Padding di dalam kotak */
+    margin: 5px 0; /* Margin di atas dan bawah */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Sudut yang melengkung */
+    font-size: 16px; /* Ukuran font */
+    box-sizing: border-box; /* Agar padding dan border tidak mengubah ukuran total */
+}
+
+.input-field:focus {
+    border-color: #007bff; /* Warna border saat fokus */
+    outline: none; /* Hapus outline default */
+}
+

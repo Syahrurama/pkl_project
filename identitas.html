@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identitas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="identitas.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav>
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="Asset/bunga.png" alt="">
+                    <span class="nav-item">Politeknik Karya Husada</span>
+                </a>
+            </li>
+            <li><a href="#"><i class="fas fa-file-alt"></i><span class="nav-item">Lembar Identitas</span></a></li>
+            <li><a href="Signifikan.html"><i class="fas fa-file-alt"></i><span class="nav-item">Lembar Signifikan</span></a></li>
+            <li><a href="pengaturan.html"><i class="fa-solid fa-gear"></i><span class="nav-item">Pengaturan</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Judul -->
+    <div class="container-fluid" id="content">
+        <h1>Lembar Identitas</h1>
+        <br>
+        
+        <!-- Konten lainnya seperti tabel atau form -->
+        <div class="card">
+            <div class="card-body">
+                <h2>Identitas Umum Pasien</h2>
+                <br>
+
+                <!-- Pindahkan tombol di sini -->
+                <div class="button-container">
+                    <button id="tambahButton" class="btn btn-primary">Tambah</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Lengkap</th>
+                                <th>Nomor Rekam Medis</th>
+                                <th>NIK</th>
+                                <th>Nomor Telpon</th>
+                                <th>Tempat Lahir</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>DinoSaurus</td>
+                                <td>123456</td>
+                                <td>111111</td>
+                                <td>-</td>
+                                <td>Depok</td>
+                                <td>02-02-2022</td>
+                                <td>Perempuan</td>
+                                <td>
+                                    <a href="#" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa-regular fa-note-sticky"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h1>Tambah Data </h1>
+            <br>
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <span class="details">Nama Lengkap</span>
+                <div class="input-container">
+                    <input type="text" id="namaLengkap" class="input-box" placeholder="Masukkan nama lengkap">
+                </div>
+               
+                <label for="nomorRekamMedis">Nomor Rekam Medis:</label>
+                <div class="input-container">
+                    <input type="text" id="nomorRekamMedis" class="input-box" placeholder="Masukkan nomor rekam medis">
+                </div>
+
+                <label for="nik">NIK:</label>
+                <div class="input-container">
+                    <input type="text" id="nik" class="input-box" placeholder="Masukkan NIK">
+                </div>
+                
+                <label for="nomorTelpon">Nomor Telepon:</label>
+                <div class="input-container">
+                    <input type="tel" id="nomorTelpon" class="input-box" placeholder="Masukkan nomor telepon">
+                </div>
+
+                <label for="tempatLahir">Tempat Lahir:</label>
+                <div class="input-container">
+                    <input type="text" id="tempatLahir" class="input-box" placeholder="Masukkan tempat lahir">
+                </div>
+     
+                <label for="tanggalLahir">Tanggal Lahir:</label>
+                <div class="input-container">
+                    <input type="date" id="tanggalLahir" class="input-box">
+                </div>
+                
+                <label for="jenisKelamin">Jenis Kelamin:</label>
+                <select id="jenisKelamin" class="input-box">
+                    <option value="laki-laki">Laki-laki</option>
+                    <option value="perempuan">Perempuan</option>
+                </select>
+                <br>
+
+                <label for="AlamatLengkap">Alamat Lengkap:</label>
+                <div class="input-container">
+                    <input type="text" id="AlamatLengkap" class="input-box" placeholder="Masukkan Alamat Lengkap">
+                </div>
+
+                <label for="Agama">Agama:</label>
+                <select id="Agama" class="input-box">
+                    <option value="Islam">Islam</option>
+                    <option value="Katolik">Katolik</option>
+                    <option value="Protestan">Protestan</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Budha">Budha</option>
+                    <option value="Konghucu">Konghucu</option>
+                </select>
+                <br>
+
+                <label for="RTRW">RT/RW:</label>
+                <div class="input-container">
+                    <input type="text" id="RTRW" class="input-box" placeholder="Masukkan RT/RW">
+                </div>
+
+                <label for="Kecamatan">Kecamatan:</label>
+                <div class="input-container">
+                    <input type="text" id="Kecamatan" class="input-box" placeholder="Masukkan Kecamatan">
+                </div>
+
+                <label for="Kelurahan">Kelurahan:</label>
+                <div class="input-container">
+                    <input type="text" id="Kelurahan" class="input-box" placeholder="Masukkan Kelurahan">
+                </div>
+
+                <label for="Kota">Kota:</label>
+                <div class="input-container">
+                    <input type="text" id="Kota" class="input-box" placeholder="Masukkan Kota">
+                </div>
+                <label for="KodePos">Kode Pos:</label>
+                <div class="input-container">
+                    <input type="number" id="KodePos" class="input-box" placeholder="Masukkan kode pos kota anda">
+                </div>
+                <br>
+
+                <!-- Tambahkan pesan peringatan -->
+                <p id="warningMessage" style="color:red; display:none;">Pastikan semua data terisi!</p>
+                <br>
+                <button class="btn btn-primary" id="saveButton">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mendapatkan modal
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("tambahButton");
+        var span = document.getElementsByClassName("close")[0];
+        var warningMessage = document.getElementById("warningMessage");
+
+        // Ketika tombol ditekan, buka modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Ketika pengguna mengklik (x), tutup modal
+        span.onclick = function() {
+            closeModal();
+        }
+
+        // Ketika pengguna mengklik di luar modal, tutup modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            modal.style.display = "none";
+            resetForm(); // Mengosongkan form saat modal ditutup
+        }
+
+        // Fungsi untuk mengosongkan form
+        function resetForm() {
+            document.getElementById("namaLengkap").value = "";
+            document.getElementById("nomorRekamMedis").value = "";
+            document.getElementById("nik").value = "";
+            document.getElementById("nomorTelpon").value = "";
+            document.getElementById("tempatLahir").value = "";
+            document.getElementById("tanggalLahir").value = "";
+            document.getElementById("jenisKelamin").value = "laki-laki";
+            document.getElementById("AlamatLengkap").value = "";
+            document.getElementById("Agama").value = "Islam";
+            document.getElementById("RTRW").value = "";
+            document.getElementById("Kecamatan").value = "";
+            document.getElementById("Kelurahan").value = "";
+            document.getElementById("Kota").value = "";
+            document.getElementById("KodePos").value = "";
+            warningMessage.style.display = "none"; // Sembunyikan pesan peringatan
+        }
+
+        // Fungsi untuk validasi dan menyimpan data
+        document.getElementById("saveButton").onclick = function() {
+            var namaLengkap = document.getElementById("namaLengkap").value;
+            var nomorRekamMedis = document.getElementById("nomorRekamMedis").value;
+            var nik = document.getElementById("nik").value;
+
+            // Cek apakah semua field terisi
+            if (!namaLengkap || !nomorRekamMedis || !nik) {
+                warningMessage.style.display = "block";
+            } else {
+                // Lakukan penyimpanan data di sini
+                alert("Data berhasil disimpan!");
+
+                // Setelah berhasil menyimpan, tutup modal
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
